@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zdarzeń</title>
+</head>
+<body>
+<center><h2>Zestawienie zdarzeń:</h2><br><br>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>Początrek podróży</th>
+            <th>Koniec podróży</th>
+            <th>Użytkownik</th>
+            <th>Samochód</th>
+            <th>Początkowy stan licznika</th>
+            <th>Końcowy stan licznika</th>
+            <th>Dokumenty kosztowe</th>
+            <th>Przychód</th>
+            <th>Komentarz</th>
+            <th>Uszkodzenia</th>
+            <th>Opis uszkodzeń</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Occurence : ${occurences}">
+
+            <td><span th:text="${Occurence.startTravellingDate}"/></td>
+            <td><span th:text="${Occurence.endTravellingDate}"/></td>
+            <td><span th:text="${Occurence.carUser}"/></td>
+            <td><span th:text="${Occurence.car}"/></td>
+            <td><span th:text="${Occurence.startCarOdoMeter}"/></td>
+            <td><span th:text="${Occurence.stopCarOdometer}"/></td>
+            <td><span th:text="${Occurence.costFV}"/></td>
+            <td><span th:text="${Occurence.revenueFV}"/></td>
+            <td><span th:text="${Occurence.comment}"/></td>
+            <td><span th:text="${Occurence.damaged}"/></td>
+            <td><span th:text="${Occurence.damageComment}"/></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>

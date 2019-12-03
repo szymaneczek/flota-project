@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" />
+    <meta charset="UTF-8">
+    <title>Flota Project</title>
+</head>
+<body>
+<center><img src="../images/fleet2.png" width="800" height="270" align=center alt="Car Fleet"/></center><br>
+<center><h1>Usługi zarządzania flotą.</h1></center>
+<ul>
+    <li><a th:href="@{/user/get/}" class="btn btn-primary" role="button" >Użytkownicy</a><br>(<a th:href="@{/user/get/}">Lista Użytkowników</a>)<br>(<a th:href="@{/user/create}">Dodaj Użytkownika</a>)</li><br>
+    <li><a th:href="@{/car/get/}" class="btn btn-primary" role="button" >Samochody</a><br>(<a th:href="@{/car/get/}">Zestawienie pojazdów</a>)<br>(<a th:href="@{/car/create}">Dodaj samochód</a>)</li><br>
+    <li><a th:href="@{/occurence/get/}" class="btn btn-primary" role="button" >Zdarzenia</a><br>(<a th:href="@{/occurence/get/}">Zestawienie zdarzeń</a>)<br>(<a th:href="@{/occurence/create}">Dodaj zdarzenie</a></li></ul></ul>
+
+<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+
+    Zalogowany jako: <span sec:authentication="name"></span> |
+    Rola: <span sec:authentication="principal.authorities"></span>
+
+    <div>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</div>
+
+<div th:fragment="login" class="logout" sec:authorize="isAnonymous()">
+    <a th:href="@{/login}">Zaloguj się</a>
+</div>
+</body>
+</html>

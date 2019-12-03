@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Fleet Manager Create Car</title>
+</head>
+<body>
+<form th:action="@{/car/create}" method="POST" th:object="${car}">
+    <table>
+        <tr><td></td><td><input type="hidden" id="id" name="id" th:value="${car.carId}"/></td></tr>
+        <tr><td>VIN:</td><td><input type="text" id="VIN" name="VIN" th:value="${car.VIN}"/></td></tr>
+        <tr><td>Numer Rejestracyjny:</td><td><input type="text" id="registrationNumber" name="registrationNumber" th:value="${car.registrationNumber}"/></td></tr>
+        <tr><td>Typ pojazdu:</td><td><input type="text" id="carTypeModel" name="carTypeModel" th:value="${car.carTypeModel}"/></td></tr>
+        <tr><td>Początek użytkowania (dd-mm-rrrr):</td><td><input type="Date" id="dateStartUse" name="dateStartUse" th:value="${car.dateStartUse}"/></td></tr>
+        <tr><td>Koniec użytkowania (dd-mm-rrrr):</td><td><input type="Date" id="dateEndUse" name="dateEndUse" th:value="${car.dateEndUse}"/></td></tr>
+        <tr><td></td><td> <button type="submit">Zatwierdź</button></td></tr>
+    </table>
+</form>
+
+</body>
+</html>

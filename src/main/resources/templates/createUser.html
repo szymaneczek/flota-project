@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Fleet Manager</title>
+</head>
+<body>
+<form th:action="@{/user/create}" method="POST" th:object="${user}">
+    <table>
+        <tr><td></td><td><input type="hidden" id="id" name="id" th:value="${user.userId}"/></td></tr>
+        <tr><td>Imie:</td><td><input type="text" id="name" name="name" th:value="${user.name}"/></td></tr>
+        <tr><td>Nazwisko:</td><td><input type="text" id="surname" name="surname" th:value="${user.surname}"/></td></tr>
+        <tr><td></td><td> <button type="submit">Zatwierdź</button></td></tr>
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Fleet Manager Create Occurence</title>
+</head>
+<body>
+<form th:action="@{/occurence/create}" method="POST" th:object="${occurence}">
+    <table>
+        <tr><td></td><td><input type="hidden" id="id" name="id" th:value="${occurence.occurrenceId}"/></td></tr>
+        <tr><td>Początek podróży (dd-mm-rrrr):</td><td><input type="Date" id="startTraVellingDate" name="startTravellingDate" th:value="${occurence.startTravellingDate}"/></td></tr>
+        <tr><td>Koniec podróży (dd-mm-rrrr):</td><td><input type="Date" id="endTraVellingDate" name="endTravellingDate" th:value="${occurence.endTravellingDate}"/></td></tr>
+        <tr><td>Użytkownik:</td><td><input type="text" id="carUser" name="carUser" th:value="${occurence.carUser}"/></td></tr>
+        <tr><td>Samochód:</td><td><input type="text" id="car" name="car" th:value="${occurence.car}"/></td></tr>
+        <tr><td>Początkowy stan licznika (km):</td><td><input type="text" id="startCarOdoMeter" name="startCarOdoMeter" th:value="${occurence.startCarOdoMeter}"/></td></tr>
+        <tr><td>Końcowy stan licznika (km):</td><td><input type="text" id="stopCarOdometer" name="stopCarOdometer" th:value="${occurence.stopCarOdometer}"/></td></tr>
+        <tr><td>Dokumenty kosztowe (FV):</td><td><input type="text" id="costFV" name="costFV" th:value="${occurence.costFV}"/></td></tr>
+        <tr><td>Przychód:</td><td><input type="text" id="revenueFV" name="revenueFV" th:value="${occurence.revenueFV}"/></td></tr>
+        <tr><td>Komentarz:</td><td><input type="text" id="comment" name="comment" th:value="${occurence.comment}"/></td></tr>
+        <tr><td>Uszkodzenia:</td><td><input type="checkbox" id="damaged" name="damaged" th:value="${occurence.damaged}"/></td></tr>
+        <tr><td>Opis uszkodzeń:</td><td><input type="text" id="damageComment" name="damageComment" th:value="${occurence.damageComment}"/></td></tr>
+        <tr><td></td><td> <button type="submit">Zatwierdź</button></td></tr>
+    </table>
+</form>
+</body>
+</html>

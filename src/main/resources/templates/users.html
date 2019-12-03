@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dostępni Użytkownicy</title>
+</head>
+<body>
+<center><h2>Użytkownicy samochodów: </h2><br><br>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="carUser : ${users}">
+
+            <td><span th:text="${carUser.userId}"/></td>
+            <td><span th:text="${carUser.name}"/></td>
+            <td><span th:text="${carUser.surname}"/></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/user/redirect/}">Strona główna</a>
+</center>
+</body>
+</html>

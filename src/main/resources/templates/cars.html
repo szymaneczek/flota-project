@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista samochodów</title>
+</head>
+<body>
+<center><h2>Dostępna flota pojazdów:</h2><br><br>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>VIN</th>
+            <th>Numer Rejestracyjny</th>
+            <th>Typ Pojazdu</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Car : ${cars}">
+
+            <td><span th:text="${Car.VIN}"/></td>
+            <td><span th:text="${Car.registrationNumber}"/></td>
+            <td><span th:text="${Car.carTypeModel}"/></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>
